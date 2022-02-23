@@ -9,12 +9,14 @@ CONFIG += c++11
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    Sources/joueur.cpp \
     Sources/main.cpp \
     Sources/mainwindow.cpp \
     Sources/qplayerwindow.cpp \
     Sources/tplayerwindow.cpp
 
 HEADERS += \
+    Headers/joueur.h \
     Headers/mainwindow.h \
     Headers/qplayerwindow.h \
     Headers/tplayerwindow.h
