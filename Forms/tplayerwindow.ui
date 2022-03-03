@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>770</width>
-    <height>354</height>
+    <width>784</width>
+    <height>317</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -129,7 +129,7 @@
       <string/>
      </property>
      <property name="pixmap">
-      <pixmap resource="BossEnderDragon.qrc">:/Dragon_de_l'Ender_Spirit.png</pixmap>
+      <pixmap resource="../Ressources/BossEnderDragon.qrc">:/Dragon_de_l'Ender_Spirit.png</pixmap>
      </property>
      <property name="scaledContents">
       <bool>true</bool>
@@ -1677,7 +1677,7 @@ border-left-color: rgb(125, 60, 152);</string>
   </layout>
  </widget>
  <resources>
-  <include location="BossEnderDragon.qrc"/>
+  <include location="../Ressources/BossEnderDragon.qrc"/>
  </resources>
  <connections/>
 </ui>
