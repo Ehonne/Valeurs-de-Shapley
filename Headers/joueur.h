@@ -12,7 +12,7 @@ public:
 
     Joueur();
     Joueur(string nom, double degats);
-
+    std::string toString() const;
     ~Joueur();
 };
 

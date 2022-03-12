@@ -104,7 +104,7 @@ void TPlayerWindow::Execute()
     std::cout << "nom: " << b.nom;
     std::cout << endl << "hp: " << b.hp;
     std::cout << endl << "xp: " << b.xp << endl;
-    if(nbrplayer == 3 && ui->checkBox_Constant->isTristate())
+    if(nbrplayer == 3 && ui->checkBox_Constant->isChecked())
     {
         string res = "";
         Joueur Alice = Joueur(ui->lineEdit_A->text().toStdString(),ui->spinBox_A->value());
@@ -171,6 +171,13 @@ void TPlayerWindow::Execute()
             std::cout << endl << "nom: " << Charlie.nom;
             std::cout << endl << "gain: " << Charlie.gain << endl;
             cout << "-----------------------------" << endl;
+            ui->listWidget->addItem(ui->checkBox_Constant->text());
+            ui->listWidget->addItem("Resultat");
+            ui->listWidget->addItem(QString::fromStdString(Alice.toString()));
+            ui->listWidget->addItem(QString::fromStdString(Bob.toString()));
+            ui->listWidget->addItem(QString::fromStdString(Charlie.toString()));
+
+            cout << Alice.toString() << endl;;
     }
 
 }

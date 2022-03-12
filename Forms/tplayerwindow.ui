@@ -1645,9 +1645,6 @@ border-left-color: rgb(125, 60, 152);</string>
      </property>
     </widget>
    </item>
-   <item row="0" column="6" rowspan="3">
-    <widget class="QTextBrowser" name="textBrowser"/>
-   </item>
    <item row="3" column="6">
     <layout class="QHBoxLayout" name="horizontalLayout">
      <item>
@@ -1672,6 +1669,16 @@ border-left-color: rgb(125, 60, 152);</string>
       </widget>
      </item>
     </layout>
+   </item>
+   <item row="4" column="6">
+    <widget class="QPushButton" name="pushButton_Save">
+     <property name="text">
+      <string>Sauvegarder</string>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="6" rowspan="3">
+    <widget class="QListWidget" name="listWidget"/>
    </item>
   </layout>
  </widget>

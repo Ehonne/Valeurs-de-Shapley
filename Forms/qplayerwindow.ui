@@ -1722,7 +1722,7 @@ border-left-color: rgb(125, 60, 152);</string>
       </layout>
      </item>
      <item>
-      <widget class="QPushButton" name="pushButton">
+      <widget class="QPushButton" name="pushButton_save">
        <property name="text">
         <string>Sauvegarder</string>
        </property>
