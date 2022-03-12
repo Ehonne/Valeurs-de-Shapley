@@ -17,6 +17,7 @@ public:
     int number_player;
 public slots:
     void make();
+    void load();
 
 private:
     Ui::MainWindow *ui;

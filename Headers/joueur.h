@@ -6,11 +6,12 @@ using namespace std;
 class Joueur
 {
 public:
-    int degat;
     string nom;
+    double degats;
+    double gain;
 
     Joueur();
-    Joueur(int dmg, string name);
+    Joueur(string nom, double degats);
 
     ~Joueur();
 };

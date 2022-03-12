@@ -15,7 +15,10 @@ class TPlayerWindow : public QDialog
 public:
     explicit TPlayerWindow(MainWindow *dad, QWidget *parent = nullptr);
     ~TPlayerWindow();
-
+    int nbrplayer;
+public slots:
+    void Execute();
+    void Save();
 private:
     Ui::TPlayerWindow *ui;
 };

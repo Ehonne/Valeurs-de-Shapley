@@ -32,3 +32,8 @@ void MainWindow::make()
         secwind.exec();
     }
 }
+
+void MainWindow::load()
+{
+
+}

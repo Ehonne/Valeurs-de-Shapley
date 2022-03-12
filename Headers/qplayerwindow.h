@@ -3,6 +3,7 @@
 
 #include <QDialog>
 #include "mainwindow.h"
+#include "../Headers/joueur.h"
 namespace Ui {
 class QPlayerWindow;
 }
@@ -15,8 +16,10 @@ public:
     explicit QPlayerWindow(MainWindow *dad, QWidget *parent = nullptr);
     ~QPlayerWindow();
     int nbr_player;
+    vector<Joueur> vect_joueur;
 public slots:
     void make();
+    void save();
 private:
     Ui::QPlayerWindow *ui;
 };

@@ -3,11 +3,17 @@
 Joueur::Joueur()
 {
     nom = "Alice";
-    degat = 2;
+    degats = 2;
 }
 
-Joueur::Joueur(int dmg, string name)
+Joueur::Joueur(string nom, double degats)
 {
-    nom = name;
-    degat = dmg;
+    this->nom = nom;
+    this->degats = degats;
+    this->gain = 0;
+}
+
+Joueur::~Joueur()
+{
+
 }

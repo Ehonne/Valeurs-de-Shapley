@@ -655,7 +655,7 @@ border-left-color: rgb(125, 60, 152);</string>
     </widget>
    </item>
    <item row="1" column="4">
-    <widget class="QSpinBox" name="spinBox_4">
+    <widget class="QSpinBox" name="spinBox_Boss_Hp">
      <property name="palette">
       <palette>
        <active>
@@ -1119,6 +1119,9 @@ border-color: rgb(255, 0, 255);*/
      <property name="prefix">
       <string/>
      </property>
+     <property name="minimum">
+      <number>1</number>
+     </property>
     </widget>
    </item>
    <item row="2" column="5">
@@ -1138,7 +1141,7 @@ border-color: rgb(255, 0, 255);*/
     </spacer>
    </item>
    <item row="1" column="0">
-    <widget class="QSpinBox" name="spinBox_5">
+    <widget class="QSpinBox" name="spinBox_Boss_Xp">
      <property name="palette">
       <palette>
        <active>
@@ -1598,6 +1601,9 @@ border-left-color: rgb(125, 60, 152);</string>
      <property name="prefix">
       <string/>
      </property>
+     <property name="minimum">
+      <number>1</number>
+     </property>
     </widget>
    </item>
    <item row="4" column="4">
@@ -1629,41 +1635,6 @@ border-left-color: rgb(125, 60, 152);</string>
      </property>
     </widget>
    </item>
-   <item row="0" column="6" rowspan="4">
-    <widget class="QListWidget" name="listWidget">
-     <property name="sizePolicy">
-      <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
-       <horstretch>0</horstretch>
-       <verstretch>0</verstretch>
-      </sizepolicy>
-     </property>
-     <item>
-      <property name="text">
-       <string>Résultat :</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string>Valeur de Shapley : </string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string>Temps : </string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string>Calcul de Shapley : </string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string>Algo polynomial : </string>
-      </property>
-     </item>
-    </widget>
-   </item>
    <item row="5" column="2">
     <widget class="QSpinBox" name="spinBox_B">
      <property name="minimum">
@@ -1673,6 +1644,34 @@ border-left-color: rgb(125, 60, 152);</string>
       <number>15</number>
      </property>
     </widget>
+   </item>
+   <item row="0" column="6" rowspan="3">
+    <widget class="QTextBrowser" name="textBrowser"/>
+   </item>
+   <item row="3" column="6">
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="QCheckBox" name="checkBox_Classique">
+       <property name="text">
+        <string>Classique</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QCheckBox" name="checkBox_Constant">
+       <property name="text">
+        <string>Constant</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QCheckBox" name="checkBox_Pol">
+       <property name="text">
+        <string>Polynomial</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
    </item>
   </layout>
  </widget>
