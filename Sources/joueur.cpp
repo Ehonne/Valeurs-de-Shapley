@@ -5,6 +5,7 @@ Joueur::Joueur()
 {
     nom = "Alice";
     degats = 2;
+    gain = 0;
 }
 
 Joueur::Joueur(string nom, double degats)

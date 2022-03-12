@@ -4,11 +4,6 @@
 #include "../Headers/joueur.h"
 
 using namespace std;
-typedef struct Boss{
-    string nom;
-    int hp;
-    int xp;
-} boss;
 TPlayerWindow::TPlayerWindow(MainWindow *dad, QWidget *parent) :
     QDialog(parent),
     ui(new Ui::TPlayerWindow)
@@ -26,6 +21,19 @@ TPlayerWindow::TPlayerWindow(MainWindow *dad, QWidget *parent) :
         ui->spinBox_A->setVisible(false);
         ui->lineEdit_C->setVisible(false);
         ui->spinBox_C->setVisible(false);
+    }
+    if(dad->state == 1 && dad->number_player == 3) //On vient de load
+    {
+        ui->lineEdit_A->setText(QString::fromStdString(dad->vect_player[0].nom));
+        ui->lineEdit_B->setText(QString::fromStdString(dad->vect_player[1].nom));
+        ui->lineEdit_C->setText(QString::fromStdString(dad->vect_player[2].nom));
+        ui->spinBox_A->setValue(dad->vect_player[0].degats);
+        ui->spinBox_B->setValue(dad->vect_player[1].degats);
+        ui->spinBox_C->setValue(dad->vect_player[2].degats);
+        ui->lineEdit_4->setText(QString::fromStdString(dad->b.nom));
+        ui->spinBox_Boss_Hp->setValue(dad->b.hp);
+        ui->spinBox_Boss_Xp->setValue(dad->b.xp);
+
     }
 
     QObject::connect(ui->pushButton_E, SIGNAL(clicked()), this, SLOT(Execute()));

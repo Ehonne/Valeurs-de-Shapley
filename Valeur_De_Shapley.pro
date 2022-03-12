@@ -10,6 +10,7 @@ CONFIG += c++11
 
 SOURCES += \
     Sources/joueur.cpp \
+    Sources/loadwindow.cpp \
     Sources/main.cpp \
     Sources/mainwindow.cpp \
     Sources/qplayerwindow.cpp \
@@ -17,14 +18,18 @@ SOURCES += \
 
 HEADERS += \
     Headers/joueur.h \
+    Headers/loadwindow.h \
     Headers/mainwindow.h \
     Headers/qplayerwindow.h \
-    Headers/tplayerwindow.h
+    Headers/tplayerwindow.h \
+    Headers/loadwindow.h
 
 FORMS += \
+    Forms/loadwindow.ui \
     Forms/mainwindow.ui \
     Forms/qplayerwindow.ui \
-    Forms/tplayerwindow.ui
+    Forms/tplayerwindow.ui \
+    Forms/loadwindow.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
