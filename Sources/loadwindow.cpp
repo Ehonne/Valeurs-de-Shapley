@@ -88,6 +88,13 @@ void loadwindow::Validate()
       }
 
       else cout << "Unable to open file\n";
+      cout << (int)vect_player.size();
+      if(nbr_player != (int)vect_player.size())
+      {
+          QMessageBox::critical(this, "Entry error", "Le contenue du fichier n'est pas correcte");
+          vect_player.clear();
+      }
+      else
       close();
 }
 

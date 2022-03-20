@@ -11,10 +11,21 @@ QPlayerWindow::QPlayerWindow(MainWindow *dad, QWidget *parent) :
     ui->tableWidget_player->setRowCount(dad->number_player);
     nbr_player = dad->number_player;
 
+    if(dad->state == 1)
+    {
+        for(int i = 0; i < nbr_player; i++)
+        {
+            QTableWidgetItem *newItem = new QTableWidgetItem();
+                    newItem->setData(Qt::DisplayRole,dad->vect_player[i].degats);
+            ui->tableWidget_player->setItem(i,1,newItem);
+            QTableWidgetItem *newItemname = new QTableWidgetItem(QString::fromStdString(dad->vect_player[i].nom));
+            ui->tableWidget_player->setItem(i,0,newItemname);
+        }
+        ui->lineEdit_4->setText(QString::fromStdString(dad->b.nom));
+        ui->spinBox_4->setValue(dad->b.hp);
+        ui->spinBox_5->setValue(dad->b.xp);
+    }
     QObject::connect(ui->pushButton_E, SIGNAL(clicked()), this, SLOT(make()));
-
-
-
 }
 
 QPlayerWindow::~QPlayerWindow()
