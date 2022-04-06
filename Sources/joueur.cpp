@@ -21,7 +21,7 @@ Joueur::~Joueur()
 }
 
 ostream& operator << (ostream &os, const Joueur &s) {
-    return (os << "Nom: " << s.nom << ", Degat: " << s.degats << ", Gain: " << s.gain);
+    return (os << s.nom << ": Degat: " << s.degats << ", Gain: " << s.gain << " XP");
 }
 
 std::string Joueur::toString() const {

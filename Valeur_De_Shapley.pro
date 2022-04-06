@@ -1,4 +1,6 @@
 QT       += core gui
+QT += printsupport
+
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -14,6 +16,7 @@ SOURCES += \
     Sources/main.cpp \
     Sources/mainwindow.cpp \
     Sources/qplayerwindow.cpp \
+    Sources/resultat.cpp \
     Sources/tplayerwindow.cpp
 
 HEADERS += \
@@ -22,14 +25,16 @@ HEADERS += \
     Headers/mainwindow.h \
     Headers/qplayerwindow.h \
     Headers/tplayerwindow.h \
-    Headers/loadwindow.h
+    Headers/loadwindow.h \
+    Headers/resultat.h
 
 FORMS += \
     Forms/loadwindow.ui \
     Forms/mainwindow.ui \
     Forms/qplayerwindow.ui \
     Forms/tplayerwindow.ui \
-    Forms/loadwindow.ui
+    Forms/loadwindow.ui \
+    Forms/resultat.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

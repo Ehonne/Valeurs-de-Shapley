@@ -13,13 +13,20 @@ class QPlayerWindow : public QDialog
     Q_OBJECT
 
 public:
-    explicit QPlayerWindow(MainWindow *dad, QWidget *parent = nullptr);
+    explicit QPlayerWindow(QWidget *parent = nullptr);
     ~QPlayerWindow();
     int nbr_player;
+    bool get_vect();
     vector<Joueur> vect_joueur;
+    float timeS1 = 0.0;
+    float timeS2 = 0.0;
+    float timeS3 = 0.0;
 public slots:
     void make();
     void save();
+    void load();
+    void updatetab();
+    void GenAlea();
 private:
     Ui::QPlayerWindow *ui;
 };

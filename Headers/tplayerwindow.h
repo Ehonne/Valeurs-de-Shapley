@@ -16,6 +16,7 @@ public:
     explicit TPlayerWindow(MainWindow *dad, QWidget *parent = nullptr);
     ~TPlayerWindow();
     int nbrplayer;
+    vector<Joueur> vect_joueur;
 public slots:
     void Execute();
     void Save();

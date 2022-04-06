@@ -2,6 +2,7 @@
 #include "ui_tplayerwindow.h"
 #include "../Headers/mainwindow.h"
 #include "../Headers/joueur.h"
+#include "../Headers/resultat.h"
 
 using namespace std;
 TPlayerWindow::TPlayerWindow(MainWindow *dad, QWidget *parent) :
@@ -179,13 +180,10 @@ void TPlayerWindow::Execute()
             std::cout << endl << "nom: " << Charlie.nom;
             std::cout << endl << "gain: " << Charlie.gain << endl;
             cout << "-----------------------------" << endl;
-            ui->listWidget->addItem(ui->checkBox_Constant->text());
-            ui->listWidget->addItem("Resultat");
-            ui->listWidget->addItem(QString::fromStdString(Alice.toString()));
-            ui->listWidget->addItem(QString::fromStdString(Bob.toString()));
-            ui->listWidget->addItem(QString::fromStdString(Charlie.toString()));
 
             cout << Alice.toString() << endl;;
     }
-
+    /*resultat reswindow(this);
+    reswindow.setModal(true);
+    reswindow.exec();*/
 }

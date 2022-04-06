@@ -23,7 +23,6 @@ public:
     Boss b;
 public slots:
     void make();
-    void load();
 
 private:
     Ui::MainWindow *ui;

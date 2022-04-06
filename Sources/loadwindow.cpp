@@ -12,7 +12,7 @@ loadwindow::loadwindow(QWidget *parent) :
     ui(new Ui::loadwindow)
 {
     ui->setupUi(this);
-
+    state = 0;
     QObject::connect(ui->PushButton_valide, SIGNAL(clicked()), this, SLOT(Validate()));
     QObject::connect(ui->Button_cancel, SIGNAL(clicked()), this, SLOT(Cancel()));
 }
@@ -87,12 +87,17 @@ void loadwindow::Validate()
         myfile.close();
       }
 
-      else cout << "Unable to open file\n";
-      cout << (int)vect_player.size();
+      else
+      {
+          QMessageBox::critical(this, "Entry error", "Le fichier ne peut pas etre ouvert.");
+          vect_player.clear();
+          state = 1;
+      }
       if(nbr_player != (int)vect_player.size())
       {
           QMessageBox::critical(this, "Entry error", "Le contenue du fichier n'est pas correcte");
           vect_player.clear();
+          state = 1;
       }
       else
       close();
@@ -100,6 +105,7 @@ void loadwindow::Validate()
 
 void loadwindow::Cancel()
 {
+    state = 1;
     close(); //end of the window
 }
 

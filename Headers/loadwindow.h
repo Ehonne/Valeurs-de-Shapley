@@ -22,6 +22,7 @@ public:
     vector<Joueur> vect_player;
     int nbr_player;
     Boss b;
+    int state = 0;
 
 public slots:
     void Validate(); //Button for validation
