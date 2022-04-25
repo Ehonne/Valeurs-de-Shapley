@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>645</width>
+    <width>621</width>
     <height>407</height>
    </rect>
   </property>
@@ -1660,11 +1660,28 @@ border-color: rgb(255, 0, 255);*/
       </widget>
      </item>
      <item>
-      <widget class="QCheckBox" name="checkBox_Pol">
-       <property name="text">
-        <string>Polynomial</string>
-       </property>
-      </widget>
+      <layout class="QVBoxLayout" name="verticalLayout_2">
+       <item>
+        <widget class="QCheckBox" name="checkBox_Pol">
+         <property name="text">
+          <string>Polynomial</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QSpinBox" name="spinBox_2">
+         <property name="prefix">
+          <string>M = 1E </string>
+         </property>
+         <property name="minimum">
+          <number>1</number>
+         </property>
+         <property name="maximum">
+          <number>8</number>
+         </property>
+        </widget>
+       </item>
+      </layout>
      </item>
     </layout>
    </item>
@@ -1686,6 +1703,9 @@ border-color: rgb(255, 0, 255);*/
    </item>
    <item row="1" column="5" rowspan="3">
     <layout class="QVBoxLayout" name="verticalLayout">
+     <property name="sizeConstraint">
+      <enum>QLayout::SetDefaultConstraint</enum>
+     </property>
      <item>
       <widget class="QSpinBox" name="spinBox">
        <property name="suffix">
@@ -1705,6 +1725,13 @@ border-color: rgb(255, 0, 255);*/
         <string>Generateur Aleatoire</string>
        </property>
       </widget>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="">
+       <property name="sizeConstraint">
+        <enum>QLayout::SetNoConstraint</enum>
+       </property>
+      </layout>
      </item>
      <item>
       <widget class="QPushButton" name="pushButton_load">

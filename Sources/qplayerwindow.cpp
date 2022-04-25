@@ -74,7 +74,7 @@ void QPlayerWindow::updatetab()
 }
 void QPlayerWindow::GenAlea()
 {
-
+    int randomNumber = (rand() % 35) + 1;
 }
 void QPlayerWindow::load()
 {
