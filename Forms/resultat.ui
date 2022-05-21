@@ -116,7 +116,7 @@
      </column>
      <column>
       <property name="text">
-       <string>Shapley Normal</string>
+       <string>Simple</string>
       </property>
      </column>
      <column>

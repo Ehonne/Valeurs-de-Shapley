@@ -5,6 +5,7 @@
 #include "QTextTable"
 #include <QPrinter>
 #include "QMessageBox"
+#include <math.h>
 
 resultat::resultat(QPlayerWindow *dad, QWidget *parent) :
     QDialog(parent),
@@ -18,26 +19,59 @@ resultat::resultat(QPlayerWindow *dad, QWidget *parent) :
 
 
    // cout << vect_joueurs[2].nom << endl;
-    //Temps de calcul
-    //ui->tableWidget->item(0,1)->setText(QString::fromtimeS1);
-    //ui->tableWidget->item(0,2)->setText(timeS2);
-    //ui->tableWidget->item(0,3)->setText(timeS3);
-    for (int i = 0; i < (int)dad->vect_joueur.size(); i++) {
-       int j = i+1;
-        //nom du joueur
-        QTableWidgetItem *newItem = new QTableWidgetItem();
-                newItem->setData(Qt::DisplayRole,QString::fromStdString(dad->vect_joueur[i].nom));
-        ui->tableWidget->setItem(j,0,newItem);
-        //Gain Shapley normal
-        //ui->tableWidget->item(i,2)->setText(QString::fromStdString(dad->vect_joueur[i-1].gain));
-        //Gain Shapley constant
+
+    if(!dad->vect_joueur.empty())
+    {
+        //Temps de calcul
         QTableWidgetItem *newItemcont = new QTableWidgetItem();
-                newItemcont->setData(Qt::DisplayRole,dad->vect_joueur[i].gain);
-        ui->tableWidget->setItem(j,3,newItemcont);
-        //ui->tableWidget->item(i,3)->setText(QString::fromStdString(dad->vect_joueur[i-1].nom));
-        //Gain Shapley appro
-        //ui->tableWidget->item(i,4)->setText(QString::fromStdString(dad->vect_joueur[i-1].nom));
+                newItemcont->setData(Qt::DisplayRole,dad->timeS1);
+        ui->tableWidget->setItem(0,1,newItemcont);
+        for (int i = 0; i < (int)dad->vect_joueur.size(); i++) {
+           int j = i+1;
+            //nom du joueur
+            QTableWidgetItem *newItem = new QTableWidgetItem();
+                    newItem->setData(Qt::DisplayRole,QString::fromStdString(dad->vect_joueur[i].nom));
+            ui->tableWidget->setItem(j,0,newItem);
+            QTableWidgetItem *newItemcont = new QTableWidgetItem();
+                    newItemcont->setData(Qt::DisplayRole,floor(dad->vect_joueur[i].gain * 10000.0) / 10000.0);
+            ui->tableWidget->setItem(j,1,newItemcont);
+        }
     }
+    if(!dad->vect_joueur2.empty())
+    {
+        //Temps de calcul
+        QTableWidgetItem *newItemcont = new QTableWidgetItem();
+                newItemcont->setData(Qt::DisplayRole,dad->timeS2);
+        ui->tableWidget->setItem(0,2,newItemcont);
+        for (int i = 0; i < (int)dad->vect_joueur2.size(); i++) {
+           int j = i+1;
+            //nom du joueur
+            QTableWidgetItem *newItem = new QTableWidgetItem();
+                    newItem->setData(Qt::DisplayRole,QString::fromStdString(dad->vect_joueur2[i].nom));
+            ui->tableWidget->setItem(j,0,newItem);
+            QTableWidgetItem *newItemcont = new QTableWidgetItem();
+                    newItemcont->setData(Qt::DisplayRole,floor(dad->vect_joueur2[i].gain * 10000.0) / 10000.0);
+            ui->tableWidget->setItem(j,2,newItemcont);
+        }
+    }
+    if(!dad->vect_joueur3.empty())
+    {
+        //Temps de calcul
+        QTableWidgetItem *newItemcont = new QTableWidgetItem();
+                newItemcont->setData(Qt::DisplayRole,dad->timeS3);
+        ui->tableWidget->setItem(0,3,newItemcont);
+        for (int i = 0; i < (int)dad->vect_joueur3.size(); i++) {
+           int j = i+1;
+            //nom du joueur
+            QTableWidgetItem *newItem = new QTableWidgetItem();
+                    newItem->setData(Qt::DisplayRole,QString::fromStdString(dad->vect_joueur3[i].nom));
+            ui->tableWidget->setItem(j,0,newItem);
+            QTableWidgetItem *newItemcont = new QTableWidgetItem();
+                    newItemcont->setData(Qt::DisplayRole,floor(dad->vect_joueur3[i].gain * 10000.0) / 10000.0);
+            ui->tableWidget->setItem(j,3,newItemcont);
+        }
+    }
+
 
     QObject::connect(ui->pushButton_Quite, SIGNAL(clicked()), this, SLOT(Exit()));
     QObject::connect(ui->pushButton_Save, SIGNAL(clicked()), this, SLOT(save()));

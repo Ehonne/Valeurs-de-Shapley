@@ -17,6 +17,9 @@ SOURCES += \
     Sources/mainwindow.cpp \
     Sources/qplayerwindow.cpp \
     Sources/resultat.cpp \
+    Sources/shapley.cpp \
+    Sources/shapleyapprox.cpp \
+    Sources/simple.cpp \
     Sources/tplayerwindow.cpp
 
 HEADERS += \

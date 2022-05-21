@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>621</width>
+    <width>622</width>
     <height>407</height>
    </rect>
   </property>
@@ -938,6 +938,9 @@ border-left-color: rgb(125, 60, 152);</string>
      <property name="minimum">
       <number>1</number>
      </property>
+     <property name="maximum">
+      <number>150</number>
+     </property>
     </widget>
    </item>
    <item row="1" column="3">
@@ -1648,7 +1651,7 @@ border-color: rgb(255, 0, 255);*/
      <item>
       <widget class="QCheckBox" name="checkBox_class">
        <property name="text">
-        <string>Classique</string>
+        <string>Simple</string>
        </property>
       </widget>
      </item>
@@ -1725,13 +1728,6 @@ border-color: rgb(255, 0, 255);*/
         <string>Generateur Aleatoire</string>
        </property>
       </widget>
-     </item>
-     <item>
-      <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="">
-       <property name="sizeConstraint">
-        <enum>QLayout::SetNoConstraint</enum>
-       </property>
-      </layout>
      </item>
      <item>
       <widget class="QPushButton" name="pushButton_load">

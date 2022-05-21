@@ -17,7 +17,10 @@ public:
     ~QPlayerWindow();
     int nbr_player;
     bool get_vect();
+    Boss b;
     vector<Joueur> vect_joueur;
+    vector<Joueur> vect_joueur2;
+    vector<Joueur> vect_joueur3;
     float timeS1 = 0.0;
     float timeS2 = 0.0;
     float timeS3 = 0.0;
