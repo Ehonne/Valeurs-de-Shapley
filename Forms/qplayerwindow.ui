@@ -1680,7 +1680,7 @@ border-color: rgb(255, 0, 255);*/
           <number>1</number>
          </property>
          <property name="maximum">
-          <number>8</number>
+          <number>12</number>
          </property>
         </widget>
        </item>

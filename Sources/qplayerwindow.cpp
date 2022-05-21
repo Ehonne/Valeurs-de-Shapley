@@ -163,9 +163,10 @@ void QPlayerWindow::make()
     {
         if(ui->checkBox_class->isChecked())
         {
+            cout << "Debut Simple" << endl;
             time_t start = time(NULL);
-            cout << "-----------------------------" << endl;
-            cout << "JOUEURS: " << endl;
+            /*cout << "-----------------------------" << endl;
+            cout << "JOUEURS: " << endl;*/
             int nbjoueurs = vect_joueur.size();
             Joueur** J = vecteurtotab(vect_joueur);
 
@@ -175,28 +176,28 @@ void QPlayerWindow::make()
 
             Shapley(J,S,nbjoueurs);
 
-            cout << "-----------------------------" << endl;
+           /* cout << "-----------------------------" << endl;
             cout << "SHAPLEY VALUES: " << endl;
-
             cout << endl;
             for(int i = 0 ; i < nbjoueurs ; i++) cout << J[i]->nom << ": " << S[i]*b.hp << endl;
-            cout << endl;
+            cout << endl;*/
 
             Gain(S,J,b,nbjoueurs);
 
-            cout << "-----------------------------" << endl;
+            /*cout << "-----------------------------" << endl;
             cout << "REPARTITION DES GAINS: " << endl;
-
             for(int i = 0 ; i < nbjoueurs ; i++) cout << J[i]->nom << ": " << J[i]->gain << endl;
             cout << "-----------------------------" << endl;
+            printf("Durée totale : %ds\n",(int)time(NULL) - start);*/
 
-            printf("Durée totale : %ds\n",(int)time(NULL) - start);
             timeS1 = (int)time(NULL) - start;
             vect_joueur = tabtovecteur(J, nbjoueurs);
-            for(int i = 0 ; i < nbjoueurs; i++) free(J[i]);
+            for(int i = 0 ; i < nbjoueurs; i++) delete(J[i]);
+            cout << "Fin Simple" << endl;
         }
         if(ui->checkBox_Const->isChecked())
         {
+            cout << "Debut Shapley" << endl;
             time_t start = time(NULL);
 
             int nbjoueurs = vect_joueur2.size();
@@ -208,27 +209,32 @@ void QPlayerWindow::make()
             Shapleyy(J,S,b,nbjoueurs);
             for(int x = 0; x < nbjoueurs; x++) S[x] /= factoriel(nbjoueurs);
 
-            cout << "-----------------------------" << endl;
+            /*cout << "-----------------------------" << endl;
             cout << "SHAPLEY VALUES: " << endl;
-
             cout << endl;
             for(int i = 0 ; i < nbjoueurs ; i++) cout << J[i]->nom << ": " << S[i] << endl;
-            cout << endl;
+            cout << endl;*/
 
             Gainn(S,J,b,nbjoueurs);
 
-            cout << "-----------------------------" << endl;
+            /*cout << "-----------------------------" << endl;
             cout << "REPARTITION DES GAINS: " << endl;
-
             for(int i = 0 ; i < nbjoueurs ; i++) cout << J[i]->nom << ": " << J[i]->gain << endl;
             cout << "-----------------------------" << endl;
-            printf("Durée totale : %ds\n",(int)time(NULL) - start);
+            printf("Durée totale : %ds\n",(int)time(NULL) - start);*/
+
             timeS2 = (int)time(NULL) - start;
             vect_joueur2 = tabtovecteur(J, nbjoueurs);
-            for(int i = 0 ; i < nbjoueurs; i++) free(J[i]);
+            for(int i = 0 ; i < nbjoueurs; i++)
+            {
+                delete(J[i]);
+                //free(J[i]);
+            }
+            cout << "Fin Shapley" << endl;
         }
         if(ui->checkBox_Pol->isChecked())
         {
+            cout << "Debut ShapleyApporx" << endl;
             time_t start = time(NULL);
             int nbjoueurs = vect_joueur3.size();
             int m = pow(10,ui->spinBox_2->value());
@@ -239,25 +245,24 @@ void QPlayerWindow::make()
             ShapleyApprox(J,S,b,nbjoueurs,m);
             for(int x = 0; x < nbjoueurs; x++) S[x] /= m;
 
-            cout << "-----------------------------" << endl;
+            /*cout << "-----------------------------" << endl;
             cout << "SHAPLEY VALUES: " << endl;
-
             cout << endl;
             for(int i = 0 ; i < nbjoueurs ; i++) cout << J[i]->nom << ": " << S[i] << endl;
-            cout << endl;
+            cout << endl;*/
 
             GainApprox(S,J,b,nbjoueurs);
 
-            cout << "-----------------------------" << endl;
+            /*cout << "-----------------------------" << endl;
             cout << "REPARTITION DES GAINS: " << endl;
-
             for(int i = 0 ; i < nbjoueurs ; i++) cout << J[i]->nom << ": " << J[i]->gain << endl;
             cout << "-----------------------------" << endl;
+            printf("Durée totale : %ds\n",(int)time(NULL) - start);*/
 
-            printf("Durée totale : %ds\n",(int)time(NULL) - start);
             timeS3 = (int)time(NULL) - start;
             vect_joueur3 = tabtovecteur(J, nbjoueurs);
-            for(int i = 0 ; i < nbjoueurs; i++) free(J[i]);
+            for(int i = 0 ; i < nbjoueurs; i++) delete(J[i]);
+            cout << "Fin ShapleyApporx" << endl;
         }
 
         resultat reswindow(this);
