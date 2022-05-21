@@ -155,6 +155,15 @@ void QPlayerWindow::make()
     b.hp = ui->spinBox_4->value();
     b.xp = ui->spinBox_5->value();
     b.nom = ui->lineEdit_4->text().toStdString();
+    int sumdeg = 0;
+    for(int i = 0; i < (int)vect_joueur.size(); i++)
+    {
+        sumdeg += vect_joueur[i].degats;
+    }
+    if(sumdeg < b.hp)
+    {
+         QMessageBox::information(this, "Erreur", "Les dégats des joueurs sont insufisant pour battre le boss");
+    }
     if(!state)
     {
         return;
@@ -201,12 +210,14 @@ void QPlayerWindow::make()
             time_t start = time(NULL);
 
             int nbjoueurs = vect_joueur2.size();
-            Joueur** J = vecteurtotab(vect_joueur2);
+            Joueur** JShapley = vecteurtotab(vect_joueur2);
 
             double S[nbjoueurs];
 
             for(int x = 0; x < nbjoueurs; x++) S[x] = 0;
-            Shapleyy(J,S,b,nbjoueurs);
+            cout << "Calcul Shapleyy" << endl;
+            for(int i = 0 ; i < nbjoueurs ; i++) cout << JShapley[i]->nom << ": " << S[i] << endl;
+            Shapleyy(JShapley,S,b,nbjoueurs);
             for(int x = 0; x < nbjoueurs; x++) S[x] /= factoriel(nbjoueurs);
 
             /*cout << "-----------------------------" << endl;
@@ -214,8 +225,8 @@ void QPlayerWindow::make()
             cout << endl;
             for(int i = 0 ; i < nbjoueurs ; i++) cout << J[i]->nom << ": " << S[i] << endl;
             cout << endl;*/
-
-            Gainn(S,J,b,nbjoueurs);
+            cout << "Calcul Gainn" << endl;
+            Gainn(S,JShapley,b,nbjoueurs);
 
             /*cout << "-----------------------------" << endl;
             cout << "REPARTITION DES GAINS: " << endl;
@@ -224,10 +235,10 @@ void QPlayerWindow::make()
             printf("Durée totale : %ds\n",(int)time(NULL) - start);*/
 
             timeS2 = (int)time(NULL) - start;
-            vect_joueur2 = tabtovecteur(J, nbjoueurs);
+            vect_joueur2 = tabtovecteur(JShapley, nbjoueurs);
             for(int i = 0 ; i < nbjoueurs; i++)
             {
-                delete(J[i]);
+                delete(JShapley[i]);
                 //free(J[i]);
             }
             cout << "Fin Shapley" << endl;
@@ -238,11 +249,12 @@ void QPlayerWindow::make()
             time_t start = time(NULL);
             int nbjoueurs = vect_joueur3.size();
             int m = pow(10,ui->spinBox_2->value());
-            Joueur** J = vecteurtotab(vect_joueur3);
+            Joueur** JShapleyApprox = vecteurtotab(vect_joueur3);
             double S[nbjoueurs];
 
             for(int x = 0; x < nbjoueurs; x++) S[x] = 0;
-            ShapleyApprox(J,S,b,nbjoueurs,m);
+            cout << "Calcul ShapleyApprox" << endl;
+            ShapleyApprox(JShapleyApprox,S,b,nbjoueurs,m);
             for(int x = 0; x < nbjoueurs; x++) S[x] /= m;
 
             /*cout << "-----------------------------" << endl;
@@ -250,8 +262,8 @@ void QPlayerWindow::make()
             cout << endl;
             for(int i = 0 ; i < nbjoueurs ; i++) cout << J[i]->nom << ": " << S[i] << endl;
             cout << endl;*/
-
-            GainApprox(S,J,b,nbjoueurs);
+            cout << "Calcul GainApprox" << endl;
+            GainApprox(S,JShapleyApprox,b,nbjoueurs);
 
             /*cout << "-----------------------------" << endl;
             cout << "REPARTITION DES GAINS: " << endl;
@@ -260,8 +272,8 @@ void QPlayerWindow::make()
             printf("Durée totale : %ds\n",(int)time(NULL) - start);*/
 
             timeS3 = (int)time(NULL) - start;
-            vect_joueur3 = tabtovecteur(J, nbjoueurs);
-            for(int i = 0 ; i < nbjoueurs; i++) delete(J[i]);
+            vect_joueur3 = tabtovecteur(JShapleyApprox, nbjoueurs);
+            for(int i = 0 ; i < nbjoueurs; i++) delete(JShapleyApprox[i]);
             cout << "Fin ShapleyApporx" << endl;
         }
 
@@ -270,4 +282,6 @@ void QPlayerWindow::make()
         reswindow.exec();
     }
     vect_joueur.clear();
+    vect_joueur2.clear();
+    vect_joueur3.clear();
 }

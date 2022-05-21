@@ -12,6 +12,7 @@ using namespace std;
 
 void Shapleyy(Joueur **J, double* S, Boss b, int nbjoueurs)
 {
+        for(int i = 0 ; i < nbjoueurs ; i++) cout << J[i]->nom << J[i]->degats << ": " << S[i] << endl;
         int a[nbjoueurs], p[nbjoueurs+1];
         int i, j, tmp;
         int hprestant;
