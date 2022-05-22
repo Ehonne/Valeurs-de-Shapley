@@ -84,6 +84,27 @@ void QPlayerWindow::GenAlea()
     TPlayerWindow genwindow(this);
     genwindow.setModal(true);
     genwindow.exec();
+    if(genwindow.state == 0)
+    {
+        std::cout << "nbrplayer: " << genwindow.nbr_player << endl;
+        for (Joueur i: genwindow.vect_player)
+            std::cout << i.toString() << endl;
+        std::cout << genwindow.b.nom << genwindow.b.xp << genwindow.b.hp << endl;
+        ui->spinBox->setValue(genwindow.nbr_player);
+         nbr_player = genwindow.nbr_player;
+
+             for(int i = 0; i < nbr_player; i++)
+             {
+                 QTableWidgetItem *newItem = new QTableWidgetItem();
+                         newItem->setData(Qt::DisplayRole,genwindow.vect_player[i].degats);
+                 ui->tableWidget_player->setItem(i,1,newItem);
+                 QTableWidgetItem *newItemname = new QTableWidgetItem(QString::fromStdString(genwindow.vect_player[i].nom));
+                 ui->tableWidget_player->setItem(i,0,newItemname);
+             }
+             ui->lineEdit_4->setText(QString::fromStdString(genwindow.b.nom));
+             ui->spinBox_4->setValue(genwindow.b.hp);
+             ui->spinBox_5->setValue(genwindow.b.xp);
+    }
 }
 void QPlayerWindow::load()
 {

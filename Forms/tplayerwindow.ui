@@ -17,7 +17,10 @@
    <item row="2" column="0">
     <widget class="QSpinBox" name="spinBox_3_hpb">
      <property name="prefix">
-      <string>Hp du boss : </string>
+      <string>Hp max du boss : </string>
+     </property>
+     <property name="maximum">
+      <number>200</number>
      </property>
     </widget>
    </item>
@@ -44,6 +47,9 @@
      <property name="prefix">
       <string>Nombre de joueurs : </string>
      </property>
+     <property name="maximum">
+      <number>20</number>
+     </property>
     </widget>
    </item>
    <item row="1" column="0">
@@ -51,12 +57,18 @@
      <property name="prefix">
       <string>Dégats max de chaque joueur : </string>
      </property>
+     <property name="maximum">
+      <number>200</number>
+     </property>
     </widget>
    </item>
    <item row="3" column="0">
     <widget class="QSpinBox" name="spinBox_xpb">
      <property name="prefix">
-      <string>Xp du boss : </string>
+      <string>Xp max du boss : </string>
+     </property>
+     <property name="maximum">
+      <number>200</number>
      </property>
     </widget>
    </item>

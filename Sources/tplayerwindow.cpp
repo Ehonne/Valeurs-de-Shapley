@@ -3,6 +3,8 @@
 #include "../Headers/mainwindow.h"
 #include "../Headers/joueur.h"
 #include "../Headers/resultat.h"
+#include <fstream>
+#include "QMessageBox"
 
 using namespace std;
 TPlayerWindow::TPlayerWindow(QPlayerWindow *dad, QWidget *parent) :
@@ -33,4 +35,34 @@ void TPlayerWindow::Execute()
     int nbrj = ui->spinBox_nbr->value();
     int degmax = ui->spinBox_2_deg->value();
     int hpmax = ui->spinBox_3_hpb->value();
+    int xpmax = ui->spinBox_xpb->value();
+    nbr_player = nbrj;
+
+    b.nom = "nom";
+    b.hp = rand()%hpmax;
+    b.xp = rand()%xpmax;
+
+    string tmp;
+
+    ///Ouverture du fichier
+    ifstream f("prenoms.txt", ios::in);
+
+    if(f)
+    {
+     ///Création des n joueurs
+    for(int i = 0 ; i < nbrj ; i++)
+    {
+        getline(f,tmp);
+        Joueur J1 = Joueur(tmp,rand()%degmax+1);
+        vect_player.push_back(J1);
+    }
+    }
+      else
+    {
+        QMessageBox::critical(this, "Entry error", "Veuillez verifier que le fichier prenom est bien present");
+    }
+
+     f.close();
+    state = 0;
+    close();
 }
