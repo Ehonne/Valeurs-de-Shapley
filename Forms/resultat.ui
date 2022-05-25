@@ -28,6 +28,9 @@
        <height>16777215</height>
       </size>
      </property>
+     <property name="whatsThis">
+      <string>Tableau recapitulatif des resultats</string>
+     </property>
      <property name="gridStyle">
       <enum>Qt::SolidLine</enum>
      </property>
@@ -36,7 +39,7 @@
      </property>
      <row>
       <property name="text">
-       <string>Temps</string>
+       <string>Temps (s)</string>
       </property>
      </row>
      <row>

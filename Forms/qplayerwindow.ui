@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>622</width>
+    <width>682</width>
     <height>407</height>
    </rect>
   </property>
@@ -457,6 +457,9 @@
         </colorrole>
        </disabled>
       </palette>
+     </property>
+     <property name="whatsThis">
+      <string>Nom du boss</string>
      </property>
      <property name="styleSheet">
       <string notr="true">color: rgb(125, 60, 152);
@@ -918,6 +921,9 @@ border-left-color: rgb(125, 60, 152);</string>
        </disabled>
       </palette>
      </property>
+     <property name="whatsThis">
+      <string>XP du boss</string>
+     </property>
      <property name="styleSheet">
       <string notr="true">color: rgb(125, 60, 152);
 border-top-color: rgb(125, 60, 152);
@@ -939,7 +945,7 @@ border-left-color: rgb(125, 60, 152);</string>
       <number>1</number>
      </property>
      <property name="maximum">
-      <number>150</number>
+      <number>100000</number>
      </property>
     </widget>
    </item>
@@ -1393,6 +1399,9 @@ border-left-color: rgb(125, 60, 152);</string>
        </disabled>
       </palette>
      </property>
+     <property name="whatsThis">
+      <string>PV du boss</string>
+     </property>
      <property name="styleSheet">
       <string notr="true">/*color: rgb(255, 0, 255);
 border-style: solid;
@@ -1416,6 +1425,9 @@ border-color: rgb(255, 0, 255);*/
      </property>
      <property name="minimum">
       <number>1</number>
+     </property>
+     <property name="maximum">
+      <number>100000</number>
      </property>
     </widget>
    </item>
@@ -1482,6 +1494,9 @@ border-color: rgb(255, 0, 255);*/
        <width>292</width>
        <height>16777215</height>
       </size>
+     </property>
+     <property name="whatsThis">
+      <string>Tableau des joueurs</string>
      </property>
      <property name="showGrid">
       <bool>true</bool>
@@ -1650,6 +1665,9 @@ border-color: rgb(255, 0, 255);*/
      </property>
      <item>
       <widget class="QCheckBox" name="checkBox_class">
+       <property name="whatsThis">
+        <string>Repartition des gains utilisant la méthode simple</string>
+       </property>
        <property name="text">
         <string>Simple</string>
        </property>
@@ -1657,8 +1675,11 @@ border-color: rgb(255, 0, 255);*/
      </item>
      <item>
       <widget class="QCheckBox" name="checkBox_Const">
+       <property name="whatsThis">
+        <string>Repartition des gains utilisant la méthode shapley</string>
+       </property>
        <property name="text">
-        <string>Constant</string>
+        <string>Shapley</string>
        </property>
       </widget>
      </item>
@@ -1666,8 +1687,11 @@ border-color: rgb(255, 0, 255);*/
       <layout class="QVBoxLayout" name="verticalLayout_2">
        <item>
         <widget class="QCheckBox" name="checkBox_Pol">
+         <property name="whatsThis">
+          <string>Repartition des gains utilisant la méthode shapley approx</string>
+         </property>
          <property name="text">
-          <string>Polynomial</string>
+          <string>ShapleyApprox</string>
          </property>
         </widget>
        </item>
@@ -1711,6 +1735,9 @@ border-color: rgb(255, 0, 255);*/
      </property>
      <item>
       <widget class="QSpinBox" name="spinBox">
+       <property name="whatsThis">
+        <string>Nombre de joueur</string>
+       </property>
        <property name="suffix">
         <string/>
        </property>
@@ -1719,6 +1746,9 @@ border-color: rgb(255, 0, 255);*/
        </property>
        <property name="minimum">
         <number>1</number>
+       </property>
+       <property name="maximum">
+        <number>200</number>
        </property>
       </widget>
      </item>

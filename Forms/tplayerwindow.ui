@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>495</width>
-    <height>158</height>
+    <height>177</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -16,11 +16,17 @@
   <layout class="QGridLayout" name="gridLayout">
    <item row="2" column="0">
     <widget class="QSpinBox" name="spinBox_3_hpb">
+     <property name="whatsThis">
+      <string>Hp maximum possible du boss</string>
+     </property>
      <property name="prefix">
       <string>Hp max du boss : </string>
      </property>
+     <property name="minimum">
+      <number>1</number>
+     </property>
      <property name="maximum">
-      <number>200</number>
+      <number>100000</number>
      </property>
     </widget>
    </item>
@@ -44,31 +50,49 @@
    </item>
    <item row="0" column="0">
     <widget class="QSpinBox" name="spinBox_nbr">
+     <property name="whatsThis">
+      <string>Nombre de joueurs de la génération</string>
+     </property>
      <property name="prefix">
       <string>Nombre de joueurs : </string>
      </property>
+     <property name="minimum">
+      <number>1</number>
+     </property>
      <property name="maximum">
-      <number>20</number>
+      <number>50</number>
      </property>
     </widget>
    </item>
    <item row="1" column="0">
     <widget class="QSpinBox" name="spinBox_2_deg">
+     <property name="whatsThis">
+      <string>Degats max que chaque joueur peut mettre</string>
+     </property>
      <property name="prefix">
       <string>Dégats max de chaque joueur : </string>
      </property>
+     <property name="minimum">
+      <number>1</number>
+     </property>
      <property name="maximum">
-      <number>200</number>
+      <number>50000</number>
      </property>
     </widget>
    </item>
    <item row="3" column="0">
     <widget class="QSpinBox" name="spinBox_xpb">
+     <property name="whatsThis">
+      <string>Xp maximum possible que le boss peut avoir</string>
+     </property>
      <property name="prefix">
       <string>Xp max du boss : </string>
      </property>
+     <property name="minimum">
+      <number>1</number>
+     </property>
      <property name="maximum">
-      <number>200</number>
+      <number>100000</number>
      </property>
     </widget>
    </item>
